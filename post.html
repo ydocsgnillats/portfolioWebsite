@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class = "post">
+        <div class="mx-auto" style="width: 200px;">
+        <div class="form-group">
+    		<form action="/post_results">
+    			<input class = "form-control" type="text" placeholder="title" name="title">
+    			<input class = "form-control" type="text" placeholder="link" name="link">
+    			<input class = "form-control" type="text" placeholder="sub1" name="sub1">
+    			<input class = "form-control" type="text" placeholder="sub2" name="sub2">
+    			<input class = "form-control" type="text" placeholder="sub3" name="sub3">
+    			<input class = "form-control" type="text" placeholder="sub4" name="sub4">
+    			<input class = "form-control" type="text" placeholder="sub5" name="sub5">
+    			<input type="submit" value="Post to Reddit?">
+    		</form>
+        </div>
+        </div>
+        </div>
+{% endblock %}

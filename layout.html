@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <html>
+  <head>
+    <title>Ydocsgnillats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Portfolio</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="https://github.com/ydocsgnillats">Github</a></li>
+            <li><a href="https://repl.it/@ydocsgnillats">Repl.it</a></li>
+	<div class="dropdown">
+  	<a href = "#" onclick="myFunction()" class="dropbtn">Projects</a>
+ 	<div id="myDropdown" class="dropdown-content">
+    	<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="/post">Post</a>
+        <a href="/movies">Movies</a>
+        <a href="/stocks">Stocks</a>
+        <a href="/bridget">Bridget</a>
+  	</div>
+	<script>
+		/* When the user clicks on the button,
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		function filterFunction() {
+		var input, filter, ul, li, a, i;
+		input = document.getElementById("myInput");
+		filter = input.value.toUpperCase();
+		div = document.getElementById("myDropdown");
+		a = div.getElementsByTagName("a");
+		for (i = 0; i < a.length; i++) {
+			txtValue = a[i].textContent || a[i].innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			a[i].style.display = "";
+			} else {
+			a[i].style.display = "none";
+			}
+		}
+		}
+	</script>
+	</div>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
+

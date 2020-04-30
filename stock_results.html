@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class = "stocks">
+		<p>
+			STOCKS
+   		</p>
+          <div class = "col-md-6" id = "search">
+            <script>
+            (function() {
+              var cx = '007378197279746476069:waq9p0lcgmw';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+            </script>
+            <gcse:searchbox>Google</gcse:searchbox><!-- for search bar/button -->
+                </div>
+		
+		<aside class = "col-md-4" id = "right">
+          <div id = "twitter">
+            <!-- for Twitter Feed -->
+              <a class="twitter-timeline" data-width="300" data-height="600" data-theme="dark" href="https://twitter.com/JustCSThings/lists/investingmetrics">A Twitter List by Investing Metrics</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </aside>
+        </div>
+{% endblock %}
