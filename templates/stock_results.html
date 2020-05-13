@@ -1,30 +1,35 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class = "stocks">
-		<p>
-			STOCKS
-   		</p>
-          <div class = "col-md-6" id = "search">
-            <script>
-            (function() {
-              var cx = '007378197279746476069:waq9p0lcgmw';
-              var gcse = document.createElement('script');
-              gcse.type = 'text/javascript';
-              gcse.async = true;
-              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-              var s = document.getElementsByTagName('script')[0];
-              s.parentNode.insertBefore(gcse, s);
-            })();
-            </script>
-            <gcse:searchbox>Google</gcse:searchbox><!-- for search bar/button -->
-                </div>
-		
-		<aside class = "col-md-4" id = "right">
-          <div id = "twitter">
-            <!-- for Twitter Feed -->
-              <a class="twitter-timeline" data-width="300" data-height="600" data-theme="dark" href="https://twitter.com/JustCSThings/lists/investingmetrics">A Twitter List by Investing Metrics</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </div>
-        </aside>
+<div class="w3-row-padding w3-row w3-margin" id="center">
+    <div class="w3-quarter w3-padding" style="color:white">
+        <div class="w3-card" style = "color:white">
+        <h3> Stock Analysis:</h3>
+        <form action = "/stocks" method = "POST">
+            <input type = "text" name = "stock">
+            <input type = "submit" value = "submit">
+        </form>
         </div>
+    </div>
+    
+    <div class="w3-quarter w3-padding">
+        <div class="w3-card">
+          </div>
+    </div>
+    
+    <div class="w3-quarter w3-padding">
+        <div class="w3-card">
+        </div>
+    </div>
+    
+    <div class="w3-quarter w3-padding">
+        <div class="w3-card">
+        <div id = "twitter" style = "color:white">
+        <h3> Twitter Sentiment:</h3>
+        <div id = "stocksearch">{{search}}</div>
+        <div style = "w3-button"><a href="https://twitter.com/search?q=%24{{stock}}&ampsrc=typed_query">Twitter Search</a></div>
+        <a href="https://twitter.com/intent/tweet?button_hashtag={{stock}}&ampref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet {{stock}}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="w3-display-container" id = "center">
+    <iframe frameborder="0" scrolling="no"
+         width=100% height="1000px"
+     src="https://drive.google.com/file/d/1FKTpdHv605MaXxmlh7z3rDukO_snSJe2/preview">
+    </iframe>
+    <button class="w3-button w3-blue w3-hover-purple w3-round">
+        <a href="{{ url_for('static', filename='CodyResume2020Final.pdf') }}" style="color:white" download="ResumeCStallings">Download PDF</a>
+    </button>
+</div>
+{% endblock %}

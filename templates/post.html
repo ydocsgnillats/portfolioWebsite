@@ -1,19 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class = "post">
-        <div class="mx-auto" style="width: 200px;">
-        <div class="form-group">
-    		<form action="/post_results">
-    			<input class = "form-control" type="text" placeholder="title" name="title">
-    			<input class = "form-control" type="text" placeholder="link" name="link">
-    			<input class = "form-control" type="text" placeholder="sub1" name="sub1">
-    			<input class = "form-control" type="text" placeholder="sub2" name="sub2">
-    			<input class = "form-control" type="text" placeholder="sub3" name="sub3">
-    			<input class = "form-control" type="text" placeholder="sub4" name="sub4">
-    			<input class = "form-control" type="text" placeholder="sub5" name="sub5">
-    			<input type="submit" value="Post to Reddit?">
-    		</form>
+<div class="w3-row-padding w3-row w3-margin" id="center">
+    <div class="w3-quarter w3-padding" style = "color:white">
+    <div class="w3-card">
+    <div class = "post" style = "width: 200px">
+        <form action="/post" method = "POST">
+            <input type="text" placeholder="title" name="title">
+        	<input type="text" placeholder="link" name="link">
+        	<input type="text" placeholder="sub1" name="sub1">
+        	<input type="text" placeholder="sub2" name="sub2">
+        	<input type="text" placeholder="sub3" name="sub3">
+        	<input type="text" placeholder="sub4" name="sub4">
+        	<input type="text" placeholder="sub5" name="sub5">
+        	<input type="submit" value="Post to Reddit?">
+        </form>
+    </div>
+    </div>
+    </div>
+    
+    <div class="w3-quarter w3-padding">
+        <div class="w3-card w3-white">
         </div>
+    </div>
+    
+    <div class="w3-quarter w3-padding">
+        <div class="w3-card w3-white">
         </div>
+    </div>
+    
+    <div class="w3-quarter w3-padding">
+        <div class="w3-card w3-white">
         </div>
+    </div>
+</div>
 {% endblock %}

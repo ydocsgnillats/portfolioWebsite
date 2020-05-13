@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <html>
   <head>
-    <title>Ydocsgnillats</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Portfolio-Cody Stallings</title>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="fullsite.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">Portfolio</h1>
-        <strong><nav>
-          <ul class="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="https://github.com/ydocsgnillats">Github</a></li>
-            <li><a href="https://repl.it/@ydocsgnillats">Repl.it</a></li>
-	<div class="dropdown">
-  	<a href = "#" onclick="myFunction()" class="dropbtn">Projects</a>
- 	<div id="myDropdown" class="dropdown-content">
-    	<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        <a href="/post">Post</a>
-        <a href="/movies">Movies</a>
-        <a href="/stocks">Stocks</a>
-        <a href="/bridget">Bridget</a>
-  	</div>
-	<script>
-		/* When the user clicks on the button,
-		toggle between hiding and showing the dropdown content */
-		function myFunction() {
-		document.getElementById("myDropdown").classList.toggle("show");
-		}
 
-		function filterFunction() {
-		var input, filter, ul, li, a, i;
-		input = document.getElementById("myInput");
-		filter = input.value.toUpperCase();
-		div = document.getElementById("myDropdown");
-		a = div.getElementsByTagName("a");
-		for (i = 0; i < a.length; i++) {
-			txtValue = a[i].textContent || a[i].innerText;
-			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-			a[i].style.display = "";
-			} else {
-			a[i].style.display = "none";
-			}
-		}
-		}
-	</script>
-	</div>
-          </ul>
-        </nav></strong>
-      </div>
-    </header>
-    <div class="container">
-      {% block content %}
-      {% endblock %}
+    <!-- Navbar -->
+    <div class="w3-top w3-mobile">
+     <div class="w3-bar w3-theme-d2 w3-left-align">
+      <a href="/" class="w3-bar-item w3-button w3-black"><i class="fa fa-home w3-margin-right"></i>Home</a>
+      <a href="/resume" class="w3-bar-item w3-button w3-mobile w3-hover-white">Resume</a>
+      <div class = "w3-display-topright"><button onclick="document.getElementById('logButton').style.display='block'" class="w3-button w3-black">Login</button></div>
+      <a href="https://github.com/ydocsgnillats" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Github</a>
+      <a href="https://www.linkedin.com/in/cody-stallings-36868ab3/" class="w3-bar-item w3-button w3-mobile w3-hover-white">LinkedIn</a>
+     </div>
     </div>
+    
+    <div id = "wrapper">
+      <div id="overlay" class="w3-container w3-mobile w3-animate-left">
+          {% block content %}
+          {% endblock %}
+      </div>
+      
+  <!-- Login Modal -->
+    <div id="logButton" class="w3-modal">
+      <div class="w3-modal-content w3-padding w3-card-2" style = "width: 30%; height: 30%">
+          <span onclick="document.getElementById('logButton').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+    
+        <div class="w3-card w3-white" style = "width:100%;height:100%">
+            <div class = "post" style = "width:20%;height:50%" >
+              <form action="/login" method = "POST">
+                <input type="text" placeholder="username" name="username">
+               	<input type="text" placeholder="email" name="email">
+               	<input type="text" placeholder="password" name="password">
+               	<input type="submit" value="Login">
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <!-- Footer -->
+      <footer>
+      </footer>
   </body>
 </html>
-
