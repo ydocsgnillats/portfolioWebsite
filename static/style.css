@@ -1,162 +1,22 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444;
-  background-color: #dedede;
+  background: white url("/static/903637.jpg") no-repeat fixed center; 
+  background-size: 100% 100%;
 }
-/*
- * Formatting the header area
- */
-header {
-  background-color: #259c7a;
-  height: 35px;
-  width: 100%;
-  opacity: .9;
-  margin-bottom: 10px;
+
+@media screen and (max-width: 600px) {
 }
-header .logo {
-  margin: 0;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  float: left;
+
+#overlay {
+  position: absolute; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  top: 50%;
+  left: 50%;
+  height:75%;
+  width:90%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
 }
-header .logo:hover {
-  color: #444;
-  text-decoration: none;
-}
-/*
- * Centering the body content
- */
-.container {
-  width: 1200px;
-  margin: 0 auto;
-}
-.menu {
-  float: right;
-  margin-top: 8px;
-}
-.menu li {
-  display: inline;
-}
-.menu li + li {
-  margin-left: 35px;
-}
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-}
-.menu li a:hover {
-  color: #444;
-}
-.home {
-  padding: 10px 0 30px 0;
-  background-color: #fff;
-  opacity: 0.7;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-.stocks {
-  padding: 10px 0 30px 0;
-  background-color: #fff;
-  opacity: 0.7;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-.movies {
-  padding: 10px 0 30px 0;
-  border: 5px solid #259c7a;
-  background-color: #fff;
-  opacity: 0.7;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-.post {
-  padding: 10px 0 30px 0;
-  background-color: #fff;
-  opacity: 0.7;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-.bridget {
-  padding: 10px 0 30px 0;
-  background-color: #fff;
-  opacity: 0.7;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-h2 {
-  font-size: 3em;
-  margin-top: 40px;
-  text-align: center;
-  letter-spacing: -2px;
-}
-h3 {
-  font-size: 1.7em;
-  font-weight: 100;
-  margin-top: 30px;
-  text-align: center;
-  letter-spacing: -1px;
-  color: #999;
-}
-    .dropbtn {
-      color: #fff;
-      float: right;
-      margin-top: 8px;
-      border: none;
-      cursor: pointer;
-      margin-left: 35px;
-      text-decoration: none;
-    }
-    
-    .dropbtn:hover, .dropbtn:focus {
-      color: #444;
-    }
-    
-    #myInput {
-      background-image: url('searchicon.png');
-      background-position: 14px 12px;
-      background-repeat: no-repeat;
-      font-size: 16px;
-      padding: 16px 20px 12px 45px;
-      border: none;
-      border-bottom: 2px solid #ddd;
-    }
-    
-    #myInput:focus {outline: 3px solid #ddd;}
-    
-    .dropdown {
-      display: inline;
-    }
-    
-    .dropdown-content {
-      display: none;
-      background-color: #f6f6f6;
-      min-width: 230px;
-      overflow: auto;
-      border: 1px solid #ddd;
-      z-index: 1;
-      float: right;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-    }
-    
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    
-    .dropdown a:hover {background-color: #ddd;}
-    
-    .show {
-        display: flex;
-        margin-left: 50px;
-    }
+
