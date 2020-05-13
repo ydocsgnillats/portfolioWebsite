@@ -8,7 +8,6 @@ import json
 from prawcore import NotFound
 
 subreddits = []
-nonSubreddits = []
 
 def login():
     try:
@@ -20,13 +19,13 @@ def login():
 pos = 0
 errors = 0
 reddit = login()
+dneString = " "
 
-class Bot:
+class Bot():
 
-	def __init__(self, title, link):
-		self.title = title
-		self.link =  link
-
+	def getResults(self):
+		return dneString
+		
 	def getLink(self):
 		return Bot.link
 
@@ -40,14 +39,7 @@ class Bot:
 	def setTitle(self, t):
 		Bot.title = "\""+t+"\""
 		print("Title set to: " + Bot.title)
-	
-	def getResult(self):
-		result = "Subreddits: "
-		for sub in subreddits:
-			result+="\n 	" + sub
-		for non in nonSubreddits:
-			result+="\n\n	 DOESNOTEXIST"
-		return result
+
 	def post(self): 
 
 		global errors
@@ -55,9 +47,8 @@ class Bot:
 		for sub in subreddits:
 			try:
 				#try posting on subreddits listed
-				# try:
 				subreddit = reddit.subreddit(sub)
-				subreddit.submit(title, url = url)
+				subreddit.submit(Bot.title, url = Bot.link)
 				print("Posted to r/" + sub)
 			except KeyboardInterrupt:
 				print('\n')
@@ -88,14 +79,26 @@ class Bot:
 		return exists
 
 	def popSubreddits(self,*argv):
+		global dneString
+		dneString = "\nSubreddit(s) not found: "
 		for arg in argv:
 			if (Bot.sub_exists(arg,arg)):
 				subreddits.append(arg)
 			else:
-				nonSubreddits.append(arg)
-
+				dneString+="\n 	  " + arg + ", "
+		return dneString
+		
 	def clearSubreddits(self):
 		global subreddits
 		subreddits = []
 		print("Subreddit list cleared.")
 
+def main():
+    
+	b = Bot()
+	b.clearSubreddits()
+	b.popSubreddits("music", "rrrroastmytrack", "atlrrrantamusic", "promoteyourrrrmusic", "experimentalmusic", "shareyourmusic", "vaporwave")
+	b.setTitle("Test")
+	b.setLink("www.youtube.com")
+	print (b.getLink())
+	print (b.getTitle())
