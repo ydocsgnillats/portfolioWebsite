@@ -92,13 +92,10 @@ class Bot():
 		global subreddits
 		subreddits = []
 		print("Subreddit list cleared.")
-
-def main():
-    
-	b = Bot()
-	b.clearSubreddits()
-	b.popSubreddits("music", "rrrroastmytrack", "atlrrrantamusic", "promoteyourrrrmusic", "experimentalmusic", "shareyourmusic", "vaporwave")
-	b.setTitle("Test")
-	b.setLink("www.youtube.com")
-	print (b.getLink())
-	print (b.getTitle())
+	def search(self, query, *subs):
+	    result=[]
+	    
+	    for sub in subs:
+	        for post in reddit.subreddit(sub).search(query, sort = "relevance", limit = 4):
+	            result.append(post.title + " - " + post.shortlink)
+	    return result
