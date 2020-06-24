@@ -1,6 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="w3-row-padding w3-row w3-margin" id="center">
+    
+    <div class="w3-quarter w3-padding" id="center">
+        <div class="w3-card" style = "color:white">
+            <h3>Post on multiple subreddits:</h3>
+            <p>Enter a Title, link, and up to five subreddits to post to.</p>
+            <p>The bot will filter out non-existant subreddits.</p>
+        </div>
+    </div>
+    
     <div class="w3-quarter w3-padding" style = "color:white">
     <div class="w3-card">
     <div class = "post" style = "width: 200px">
@@ -18,7 +27,7 @@
     </div>
     </div>
     
-    <div class="w3-quarter w3-padding">
+    <div class="w3-quarter w3-padding" id ="center">
         <div class="w3-card" style = "color:white">
           	Results of your Post:
         	<div>
@@ -31,11 +40,6 @@
         		<p>Subreddit: {{sub5}}</p>
         		<p>{{pop}}</p>
         	</div>
-        </div>
-    </div>
-    
-    <div class="w3-quarter w3-padding">
-        <div class="w3-card w3-white">
         </div>
     </div>
     
