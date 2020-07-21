@@ -1,26 +1,31 @@
 body {
-  background: white url("/static/903637.jpg") no-repeat fixed center; 
-  background-size: 100% 100%;
+    background: white url("/static/desert.jpg") no-repeat fixed center;
+    background-size: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {}
+
+a{
+    text-decoration: none;
 }
 
 #overlay {
-  position: absolute; /* Sit on top of the page content */
-  display: flex; /* Hidden by default */
-  top: 50%;
-  left: 50%;
-  height:70%;
-  width:95%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0,0.8); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+    position: absolute;
+    /* Sit on top of the page content */
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    height: 90%;
+    width: 98%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0);
+    /* Black background with opacity */
+    z-index: 2;
+    cursor: pointer;
 }
 
-footer{
+footer {
     position: absolute;
     display: block;
     height: 2%;
@@ -28,22 +33,29 @@ footer{
     top: 98%;
     left: 0%;
     opacity: 0.4;
+    color: white;
+    z-index: 2;
+}
+
+.w3-card-4:hover {
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.5);
+    opacity:0.99;
+}
+
+.w3-card-4 {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with opacity */
+    width: 100%;
+    height: 100%;
+    opacity: 0.85
+}
+#portfolio-desc{
     color:white;
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-}
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(255,255,255,0.7);
-}
-
-.card{
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  min-height: 20%;
-  min-width: 20%;
+    border: 1px white solid;
+    margin: 10px;
+    margin-right: 50px;
+    background-color:black;
+    opacity:0.5;
 }
 
-#row1{
-  flex: 2;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
+
