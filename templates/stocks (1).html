@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="w3-row-padding w3-row w3-margin" style="margin:50">
+    <div class="w3-col s4 w3-padding" id="portfolio-desc" style = "color:white;border: 1px white solid">
+        <h2>Stock Analysis</h2>
+        <p><i>Written in python using Tweepy & Praw.</i></p>
+        <p>Enter a stock ticker to find out relevant data points for today,</p>
+        <p>and see what other people are saying about the stock on Reddit and Twitter.</p>
+    </div>
+    <div class="w3-col s2 w3-padding">
+        <div class="w3-card-4 w3-padding" style = "color:white">
+        <h3> Stock Ticker: </h3>
+        <form action = "/stocks" method = "POST">
+            <input type = "text" name = "stock">
+            <input type = "submit" name = "submit">
+        </form></div>
+    </div>
+</div>
+{% endblock %}
