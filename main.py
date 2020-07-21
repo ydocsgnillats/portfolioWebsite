@@ -2,7 +2,11 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 import reddit, stocks
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def coverIndex():
+    return render_template('cover.html')
+    
+@app.route('/home', methods=['GET', 'POST'])
 def homeIndex():
     if request.method == 'POST':
         try:
@@ -87,13 +91,21 @@ def logIndex():
 def watchIndex():
     return render_template('watches.html')
 
-@app.route('/collection')
-def collectionIndex():
-    return render_template('collection.html')
+@app.route('/record')
+def recordIndex():
+    return render_template('record.html')
 
 @app.route('/law')
 def lawIndex():
     return render_template('law.html')
+    
+@app.route('/tttapp')
+def tttappIndex():
+    return render_template('tttapp.html')
+
+@app.route('/collection')
+def collectionIndex():
+    return render_template('collection.html')
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8080, debug = True)
