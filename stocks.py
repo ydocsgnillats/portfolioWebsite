@@ -4,16 +4,16 @@ import textblob
 import json
 import urllib.request
 
-consumer_key = 'QAA5a07Q5zDDLiU9jStIJ2bOR'
-consumer_secret = 'VuLAZs6AtKnJKF67JvqGRWAgqMyqUPO8ezEJyhKaqWnSddM7RA'
-access_token = '1103708820495306752-7Zm9dYrITLoyWhFXsxeNajO8hQOjGY'
-access_token_secret = 'tpwsT3YZH8MsSutXNOPHmYgeUMTomqnYhuJhEHxtnADSe'
+consumer_key = '*'
+consumer_secret = '*'
+access_token = '*'
+access_token_secret = '*'
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 data = ''
 QUERY_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&apikey=API_KEY&symbol="
-API_KEY = 'P8OMFY0KV1G7EUKF'
+API_KEY = '*'
 
 class Stocks():
     def __init__(self):
